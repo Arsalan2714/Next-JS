@@ -13,7 +13,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 5,
@@ -45,7 +45,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 6,
@@ -53,7 +53,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 7,
@@ -61,7 +61,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 8,
@@ -69,7 +69,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 9,
@@ -77,7 +77,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 10,
@@ -85,7 +85,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 11,
@@ -93,7 +93,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
     {
       id: 12,
@@ -101,7 +101,7 @@ export default function Mugs() {
       title: "Fit-Loom",
       price: "₹499",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      size: "S,M,XL,XXL",
+      
     },
 
   ];
@@ -135,7 +135,7 @@ export default function Mugs() {
                     {product.title}
                   </h2>
                   <p className="mt-1 text-center">{product.price}</p>
-                  <p className="mt-1 text-center text-sm text-gray-600">Size: {product.size}</p>
+                  
                 </div>
               </div>
             </Link>
