@@ -3,11 +3,10 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { CiShoppingCart,CiCirclePlus, CiCircleMinus} from "react-icons/ci";
+import { CiShoppingCart, CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { IoIosCloseCircle } from "react-icons/io";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import { IoBagCheckOutline } from "react-icons/io5";
-
 
 const Navbar = () => {
   const toggleCart = () => {
@@ -57,7 +56,7 @@ const Navbar = () => {
 
       <div
         ref={ref}
-        className="w-72 sideCart absolute top-0 right-0 h-screen bg-pink-100 px-8 py-10 transform transition-transform translate-x-full z-50 overflow-y-auto"
+        className="w-72 sideCart absolute top-0 right-0 h-screen bg-pink-100 px-8 py-10 transform transition-transform translate-x-full z-50 "
       >
         <h2 className="font-bold text-xl text-center">Shopping cart</h2>
         <span
@@ -69,37 +68,68 @@ const Navbar = () => {
         <ol className="list-decimal font-semibold">
           <li>
             <div className="item flex my-5">
-            <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
-            <div className="w-1/3 flex items-center font-semibold justify-center text-lg"> <AiFillMinusCircle className="cursor-pointer text-pink-500"/> <span className="mx-2 text-sm">1</span>  <AiFillPlusCircle className="cursor-pointer text-pink-500" /> </div>
+              <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
+              <div className="w-1/3 flex items-center font-semibold justify-center text-lg">
+                {" "}
+                <AiFillMinusCircle className="cursor-pointer text-pink-500" />{" "}
+                <span className="mx-2 text-sm">1</span>{" "}
+                <AiFillPlusCircle className="cursor-pointer text-pink-500" />{" "}
               </div>
+            </div>
           </li>
           <li>
             <div className="item flex my-5">
-            <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
-            <div className="w-1/3 flex items-center font-semibold justify-center text-lg"> <AiFillMinusCircle className="cursor-pointer text-pink-500"/> <span className="mx-2 text-sm">1</span>  <AiFillPlusCircle className="cursor-pointer text-pink-500" /></div>
+              <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
+              <div className="w-1/3 flex items-center font-semibold justify-center text-lg">
+                {" "}
+                <AiFillMinusCircle className="cursor-pointer text-pink-500" />{" "}
+                <span className="mx-2 text-sm">1</span>{" "}
+                <AiFillPlusCircle className="cursor-pointer text-pink-500" />
               </div>
+            </div>
           </li>
           <li>
             <div className="item flex my-5">
-            <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
-            <div className="w-1/3 flex items-center font-semibold justify-center text-lg">  <AiFillMinusCircle className="cursor-pointer text-pink-500"/> <span className="mx-2 text-sm">1</span>  <AiFillPlusCircle className="cursor-pointer text-pink-500" /></div>
+              <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
+              <div className="w-1/3 flex items-center font-semibold justify-center text-lg">
+                {" "}
+                <AiFillMinusCircle className="cursor-pointer text-pink-500" />{" "}
+                <span className="mx-2 text-sm">1</span>{" "}
+                <AiFillPlusCircle className="cursor-pointer text-pink-500" />
               </div>
+            </div>
           </li>
           <li>
             <div className="item flex my-5">
-            <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
-            <div className="w-1/3 flex items-center font-semibold justify-center text-lg">  <AiFillMinusCircle className="cursor-pointer text-pink-500"/> <span className="mx-2 text-sm">1</span>  <AiFillPlusCircle className="cursor-pointer text-pink-500" /></div>
+              <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
+              <div className="w-1/3 flex items-center font-semibold justify-center text-lg">
+                {" "}
+                <AiFillMinusCircle className="cursor-pointer text-pink-500" />{" "}
+                <span className="mx-2 text-sm">1</span>{" "}
+                <AiFillPlusCircle className="cursor-pointer text-pink-500" />
               </div>
+            </div>
           </li>
           <li>
             <div className="item flex my-5">
-            <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
-            <div className="w-1/3 flex items-center font-semibold justify-center text-lg"> <AiFillMinusCircle className="cursor-pointer text-pink-500"/> <span className="mx-2 text-sm">1</span>  <AiFillPlusCircle className="cursor-pointer text-pink-500" /></div>
+              <div className="w-2/3 font-semibold">T-shirts - Fit Loom</div>
+              <div className="w-1/3 flex items-center font-semibold justify-center text-lg">
+                {" "}
+                <AiFillMinusCircle className="cursor-pointer text-pink-500" />{" "}
+                <span className="mx-2 text-sm">1</span>{" "}
+                <AiFillPlusCircle className="cursor-pointer text-pink-500" />
               </div>
+            </div>
           </li>
-          
         </ol>
-        <button class="flex mx-auto mt-16 text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg"><IoBagCheckOutline className="m-1"/>Checkout</button>
+        <div className="flex gap-2 mt-4">
+          <button className="flex items-center justify-center flex-1 text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-lg">
+            <IoBagCheckOutline className="m-1" />Checkout
+          </button>
+          <button className="flex items-center justify-center flex-1 text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-lg">
+            <IoBagCheckOutline className="m-1" />Clear
+          </button>
+        </div>
       </div>
     </div>
   );
