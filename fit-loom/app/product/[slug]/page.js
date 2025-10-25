@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { use } from "react"; // 👈 Import the 'use' hook
+import { use } from "react"; 
 
 export default function Page({ params }) {
-  // 🐛 FIX: Unwrap the 'params' Promise using React's 'use' hook
-  // In Next.js 13.4+, 'params' is a Promise in Client Components.
+  
   const unwrappedParams = use(params);
-  const { slug } = unwrappedParams; // Access 'slug' from the unwrapped object
+  const { slug } = unwrappedParams; 
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
