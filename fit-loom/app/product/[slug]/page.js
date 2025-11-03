@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { use, useState } from "react"; 
+import { useCart } from "../../../components/providers/CartProvider";
 
 export default function Page({ params }) {
+  const { addToCart } = useCart();
   
   const unwrappedParams = use(params);
   const { slug } = unwrappedParams; 
@@ -166,7 +168,7 @@ export default function Page({ params }) {
                <button className="flex ml-10 text-white bg-pink-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">
                 Buy Now
               </button>
-              <button className="flex ml-4 text-white bg-pink-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">
+              <button onClick={() => addToCart(slug, 1, 499, "The Catcher in the Rye", "M", "blue")} className="flex ml-4 text-white bg-pink-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">
                 Add to Cart
               </button>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 hover:bg-gray-300">

@@ -22,13 +22,13 @@ export default function Home() {
   const saveCart = (myCart) => {
     localStorage.setItem("cart", JSON.stringify(myCart)); // Ensure to stringify the cart
     let subt = 0;
-    let keys = Object.keys(myCart)
-    for (i = 0; Object.keys.length ; i++)
-    {
-      subt += myCart[keys[i]].price*myCart[keys[i]].qty
-      
+    let keys = Object.keys(myCart);
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      const item = myCart[key];
+      subt += (item.price || 0) * (item.qty || 0);
     }
-    setSubTotal(subt)
+    setSubTotal(subt);
   };
 
   const addToCart = (itemCode, qty, price, name, size, variant) => {
