@@ -109,7 +109,7 @@ export default function Tshirts() {
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-3 py-10 mx-auto">
-        <div className="flex flex-wrap -m-4">
+        <div className="flex flex-wrap -m-4 justify-center">
           {products.map((product) => (
             <Link
               key={product.id}

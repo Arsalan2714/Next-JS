@@ -49,8 +49,9 @@ export default function CartProvider({ children }) {
     computeAndSetSubtotal(myCart);
   };
 
-  const addToCart = (itemCode, qty, price, name, size, variant) => {
+  const addToCart = (itemCode, qty, price, name, size, variant, shouldOpenCart = false) => {
     const newCart = { ...cart };
+    
     if (itemCode in newCart) {
       newCart[itemCode].qty += qty;
     } else {
@@ -58,6 +59,11 @@ export default function CartProvider({ children }) {
     }
     setCart(newCart);
     saveCart(newCart);
+    
+    // Dispatch event to open cart only when shouldOpenCart is true (user clicked Add to Cart button)
+    if (shouldOpenCart && typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("cart:itemAdded"));
+    }
   };
 
   const removeFromCart = (itemCode, qty) => {
