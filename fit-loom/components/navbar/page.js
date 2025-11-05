@@ -7,6 +7,7 @@ import { CiShoppingCart, CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { IoIosCloseCircle } from "react-icons/io";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { MdAccountCircle } from "react-icons/md";
 
 import { useCart } from "../providers/CartProvider";
 
