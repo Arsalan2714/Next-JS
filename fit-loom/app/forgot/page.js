@@ -15,29 +15,12 @@ export const page = () => {
           priority
         />
         <h2 className="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">
-          Sign up for an account
+          Forgot Password
         </h2>
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form action="#" method="POST" className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              Your Name
-            </label>
-            <div className="mt-2">
-              <input
-                id="name"
-                type="text"
-                name="name"
-                required
-                autoComplete="name"
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-base text-gray-900 placeholder-gray-400 focus:border-pink-500 focus:ring-pink-500"
-                placeholder="Enter Your Name "
-              />
-            </div>
-          </div>
-
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email address
@@ -55,32 +38,13 @@ export const page = () => {
             </div>
           </div>
 
-          <div>
-            <div className="flex items-center justify-between">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
-              </label>
-             
-            </div>
-            <div className="mt-2">
-              <input
-                id="password"
-                type="password"
-                name="password"
-                required
-                autoComplete="current-password"
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-base text-gray-900 placeholder-gray-400 focus:border-pink-500 focus:ring-pink-500"
-                placeholder="Enter your password"
-              />
-            </div>
-          </div>
 
           <div>
             <button
               type="submit"
               className="flex w-full justify-center rounded-md bg-pink-500 px-3 py-2 text-sm font-semibold text-white hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
             >
-              Sign up
+              Continue
             </button>
           </div>
         </form>

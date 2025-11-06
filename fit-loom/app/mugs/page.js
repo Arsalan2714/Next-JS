@@ -3,107 +3,92 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
-
 export default function Mugs() {
   const products = [
     {
       id: 1,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 2,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 3,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 4,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 5,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 6,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 7,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 8,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 9,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 10,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 11,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
     {
       id: 12,
-      category: "T-shirts",
-      title: "Fit-Loom",
-      price: "₹499",
+      category: "Mugs",
+      title: "Coffee Mug",
+      price: "₹299",
       img: "https://m.media-amazon.com/images/I/51I11Ks0SZL._AC_UL480_FMwebp_QL65_.jpg",
-      
     },
-
   ];
 
   return (
@@ -135,7 +120,6 @@ export default function Mugs() {
                     {product.title}
                   </h2>
                   <p className="mt-1 text-center">{product.price}</p>
-                  
                 </div>
               </div>
             </Link>

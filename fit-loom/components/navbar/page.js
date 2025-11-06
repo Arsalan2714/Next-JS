@@ -74,12 +74,13 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div
-        onClick={toggleCart}
-        className="cursor-pointer Cart absolute right-0 mx-5 top-4"
-      >
-        {" "}
-        <CiShoppingCart className=" text-xl md:text-3xl" />
+      <div className="flex items-center gap-2 md:ml-auto md:static absolute right-0 top-3 sm:top-5 mx-4 sm:mx-5 h-10">
+        <Link href="/login">
+          <MdAccountCircle className="cursor-pointer text-xl sm:text-2xl md:text-3xl" />
+        </Link>
+        <div onClick={toggleCart} className="cursor-pointer flex items-center">
+          <CiShoppingCart className="text-xl sm:text-2xl md:text-3xl" />
+        </div>
       </div>
 
       {/* Side Cart */}
@@ -118,28 +119,30 @@ const Navbar = () => {
               </div>
             ) : (
               <div className="space-y-3">
-                {Object.keys(cart).map((k) => {
-                  const itemTotal = (cart[k].price || 0) * cart[k].qty;
+                {Object.keys(cart).map((cartKey) => {
+                  const item = cart[cartKey];
+                  const itemTotal = (item.price || 0) * item.qty;
+
                   return (
                     <div
-                      key={k}
+                      key={cartKey}
                       className="bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200 hover:shadow-md transition-shadow"
                     >
                       <div className="flex flex-col gap-3">
                         <div className="flex-1 min-w-0">
                           <h3 className="font-semibold text-gray-800 text-sm sm:text-base mb-1 truncate">
-                            {cart[k].name}
+                            {item.name}
                           </h3>
-                          {(cart[k].size || cart[k].variant) && (
+                          {(item.size || item.variant) && (
                             <div className="flex flex-wrap gap-2 mb-2">
-                              {cart[k].size && (
+                              {item.size && (
                                 <span className="text-xs text-gray-500 bg-gray-200 px-2 py-0.5 rounded">
-                                  Size: {cart[k].size}
+                                  Size: {item.size}
                                 </span>
                               )}
-                              {cart[k].variant && (
+                              {item.variant && (
                                 <span className="text-xs text-gray-500 bg-gray-200 px-2 py-0.5 rounded">
-                                  {cart[k].variant}
+                                  {item.variant}
                                 </span>
                               )}
                             </div>
@@ -148,27 +151,28 @@ const Navbar = () => {
                             ₹{itemTotal.toFixed(2)}
                           </p>
                           <p className="text-gray-400 text-xs">
-                            ₹{cart[k].price?.toFixed(2)} each
+                            ₹{item.price?.toFixed(2)} each
                           </p>
                         </div>
+                        {/* Quantity controls */}
                         <div className="flex items-center justify-between bg-white rounded-full px-3 py-1.5 border border-gray-200">
                           <AiFillMinusCircle
-                            onClick={() => removeFromCart(k, 1)}
+                            onClick={() => removeFromCart(cartKey, 1)}
                             className="cursor-pointer text-pink-500 hover:text-pink-700 transition-colors text-lg sm:text-xl flex-shrink-0"
                           />
                           <span className="mx-3 text-gray-800 font-semibold min-w-[1.5rem] text-center text-sm sm:text-base">
-                            {cart[k].qty}
+                            {item.qty}
                           </span>
                           <AiFillPlusCircle
                             onClick={() =>
                               addToCart(
-                                k,
+                                item.productId,
                                 1,
-                                cart[k].price || 0,
-                                cart[k].name,
-                                cart[k].size,
-                                cart[k].variant,
-                                false // Don't open cart when updating quantity in sidebar
+                                item.price,
+                                item.name,
+                                item.size,
+                                item.variant,
+                                false
                               )
                             }
                             className="cursor-pointer text-pink-500 hover:text-pink-700 transition-colors text-lg sm:text-xl flex-shrink-0"

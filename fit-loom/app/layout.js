@@ -12,6 +12,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  icons:{
+    icon:"/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  }
 });
 
 export const metadata = {

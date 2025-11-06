@@ -12,6 +12,10 @@ export function useCart() {
   return ctx;
 }
 
+const generateCartKey = (productId, size = '', variant = '') => {
+  return `${productId}_${size}_${variant}`.trim();
+};
+
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState({});
   const [subTotal, setSubTotal] = useState(0);
@@ -32,6 +36,16 @@ export default function CartProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Calculate subtotal whenever cart changes
+  useEffect(() => {
+    let total = 0;
+    Object.keys(cart).forEach((key) => {
+      const item = cart[key];
+      total += (parseFloat(item.price) || 0) * item.qty;
+    });
+    setSubTotal(total);
+  }, [cart]);
+
   const computeAndSetSubtotal = (myCart) => {
     let subtotalAmount = 0;
     const keys = Object.keys(myCart);
@@ -49,33 +63,42 @@ export default function CartProvider({ children }) {
     computeAndSetSubtotal(myCart);
   };
 
-  const addToCart = (itemCode, qty, price, name, size, variant, shouldOpenCart = false) => {
-    const newCart = { ...cart };
+  const addToCart = (productId, qty, price, name, size, variant, openCart = true) => {
+    const cartKey = generateCartKey(productId, size, variant);
     
-    if (itemCode in newCart) {
-      newCart[itemCode].qty += qty;
-    } else {
-      newCart[itemCode] = { qty, price, name, size, variant };
-    }
-    setCart(newCart);
-    saveCart(newCart);
-    
-    // Dispatch event to open cart only when shouldOpenCart is true (user clicked Add to Cart button)
-    if (shouldOpenCart && typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("cart:itemAdded"));
+    setCart(prevCart => {
+      const newCart = {
+        ...prevCart,
+        [cartKey]: {
+          qty: (prevCart[cartKey]?.qty || 0) + qty,
+          price: parseFloat(price),
+          name,
+          size,
+          variant,
+          productId
+        }
+      };
+      saveCart(newCart); // Save to localStorage
+      return newCart;
+    });
+
+    if (openCart) {
+      // Dispatch event to open cart
+      window.dispatchEvent(new Event('cart:itemAdded'));
     }
   };
 
-  const removeFromCart = (itemCode, qty) => {
-    const newCart = { ...cart };
-    if (itemCode in newCart) {
-      newCart[itemCode].qty -= qty;
-      if (newCart[itemCode].qty <= 0) {
-        delete newCart[itemCode];
+  const removeFromCart = (cartKey, qty) => {
+    setCart(prevCart => {
+      const newCart = { ...prevCart };
+      if (newCart[cartKey].qty <= qty) {
+        delete newCart[cartKey];
+      } else {
+        newCart[cartKey].qty -= qty;
       }
-    }
-    setCart(newCart);
-    saveCart(newCart);
+      saveCart(newCart); // Save to localStorage
+      return newCart;
+    });
   };
 
   const clearCart = () => {
